@@ -30,5 +30,6 @@ mix.scripts([
     'resources/js/libs/metisMenu.js',
     'resources/js/libs/sb-admin-2.js',
     'resources/js/libs/scripts.js',
+    'resources/js/libs/util.js',
     
 ], 'public/js/libs.js');

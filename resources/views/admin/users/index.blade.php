@@ -4,6 +4,33 @@
 @section('content')
 
 
+@if (Session::has('deleted_user'))
+<div class="alert alert-danger alert-dismissible  show" role="alert">
+   {{session('deleted_user')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+@endif
+@if (Session::has('Updated_user'))
+<div class="alert alert-info alert-dismissible  show" role="alert">
+   {{session('Updated_user')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+  
+@endif
+@if (Session::has('created_user'))
+<div class="alert alert-success alert-dismissible  show" role="alert">
+   {{session('created_user')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+@endif
+
+
 <h1>Users</h1>
 
 <table class="table"> 
