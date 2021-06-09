@@ -37,5 +37,7 @@ Route::resource('admin/users',App\Http\Controllers\AdminUsersController::class);
 
 Route::resource('admin/posts',App\Http\Controllers\AdminPostsController::class);
 
+Route::resource('admin/categories',App\Http\Controllers\AdminCategoriesController::class);
+
 });
 

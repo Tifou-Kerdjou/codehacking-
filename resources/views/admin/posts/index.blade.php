@@ -4,6 +4,32 @@
 
 @section('content')
 
+@if (Session::has('deleted_post'))
+<div class="alert alert-danger alert-dismissible  show" role="alert">
+   {{session('deleted_post')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+@endif
+@if (Session::has('Updated_post'))
+<div class="alert alert-info alert-dismissible  show" role="alert">
+   {{session('Updated_post')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+  
+@endif
+@if (Session::has('created_post'))
+<div class="alert alert-success alert-dismissible  show" role="alert">
+   {{session('created_post')}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div> 
+@endif
+
 <h1>Posts</h1>
 <table class="table"> 
     <tr> 
@@ -19,7 +45,7 @@
      @if ($posts)
     
     
-     @foreach ($posts as $post)
+     @foreach ($posts as $post) 
     
      <tr> 
         <td>{{$post->id}}</td> 
