@@ -56,6 +56,7 @@
         <td>{{$post->category->name}}</td> 
         <td>{{$post->created_at->diffForHumans()}}</td> 
         <td>{{$post->updated_at->diffForHumans()}}</td> 
+        <td> <td><a href="{{route('home.post',$post->id)}}">View Post</a></td>  </td>
         </tr> 
          
      @endforeach

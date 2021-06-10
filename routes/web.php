@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
+Route::get('/post/{id}',[App\Http\Controllers\AdminPostsController::class,'post'])->name('home.post');
 
 Route::group(['middleware'=>'admin'],function(){
 
@@ -40,5 +40,10 @@ Route::resource('admin/posts',App\Http\Controllers\AdminPostsController::class);
 Route::resource('admin/categories',App\Http\Controllers\AdminCategoriesController::class);
 
 Route::resource('admin/media',App\Http\Controllers\AdminMediaController::class);
+
+
+Route::resource('admin/comments',App\Http\Controllers\PostCommentsController::class);
+
+Route::resource('admin/comments/replies',App\Http\Controllers\CommentRepliesController::class);
 });
 
