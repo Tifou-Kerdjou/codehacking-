@@ -46,14 +46,14 @@
 
 </div>
 <div class="form-group">
-    {!! Form::submit("Update User", ['class'=>'btn btn-primary']) !!}
+    {!! Form::submit("Update Post", ['class'=>'btn btn-primary']) !!}
 
     {!! Form::close() !!}
     
 </div>
     {!! Form::open(['method'=>'DELETE','action'=>['App\Http\Controllers\AdminPostsController@destroy',$post->id]]) !!}
 
-    {!! Form::submit('Delete User', ['class'=>'btn btn-danger']) !!}
+    {!! Form::submit('Delete Post', ['class'=>'btn btn-danger']) !!}
     {!! Form::close() !!}
 
 

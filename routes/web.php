@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('/post/{id}',[App\Http\Controllers\AdminPostsController::class,'post'])->name('home.post');
+Route::get('/post/{slug}',[App\Http\Controllers\AdminPostsController::class,'post'])->name('home.post');
 
 Route::group(['middleware'=>'admin'],function(){
 

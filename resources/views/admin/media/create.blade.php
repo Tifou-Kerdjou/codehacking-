@@ -8,14 +8,7 @@
 @section('content')
 
 
-@if (Session::has('created_photo'))
-<div class="alert alert-success alert-dismissible  show" role="alert">
-   {{session('created_photo')}}
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
- </div> 
-@endif
+
 
 
 <h1>Upload Media</h1>
@@ -23,14 +16,7 @@
 
 
 {!! Form::open(['method'=>'POST', 'action'=>'App\Http\Controllers\AdminMediaController@store','class'=>'dropzone']) !!}
-@if (Session::has('created_photo'))
-<div class="alert alert-success alert-dismissible  show" role="alert">
-   {{session('created_photo')}}
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
- </div> 
-@endif
+
 
 
 

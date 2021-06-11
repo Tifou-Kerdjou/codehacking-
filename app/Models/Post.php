@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Models;
-
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Post extends Model 
 {
+    use Sluggable;
     use HasFactory;
     protected $fillable = [
-        'category_id', 'photo_id','title', 'body'
+        'category_id', 'photo_id','title', 'body','slug'
     ];
 
     public function user(){
@@ -24,5 +25,14 @@ class Post extends Model
 
     public function comments(){
         return $this->hasMany('App\Models\Comment');
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug'   => [
+            'source' => 'title'
+            ]
+        ];
     }
 }

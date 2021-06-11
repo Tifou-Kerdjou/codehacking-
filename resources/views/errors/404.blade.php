@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>404 Custom Error Page Example</title>
+    <title>404 Page not found</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 </head>
 
-<body class="bg-image"style="background-image: url('images/error.jpg');">
+<body class="bg-image"style="background-image: url('/images/404.png');">
     
     <div class="container mt-5 pt-5">
         <div class=" text-white text-center">

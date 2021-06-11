@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Session;
 
 use App\Models\Photo;
 
+use App\Models\CommentReply;
+
 class AdminPostsController extends Controller
 {
     /**
@@ -22,7 +24,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::paginate(8);
         return view('admin.posts.index',compact('posts'));
     }
 
@@ -132,6 +134,7 @@ class AdminPostsController extends Controller
     {
         $post=Post::findOrFail($id);
         unlink(public_path().$post->photo->file);
+        Photo::find($post->photo->id)->delete();
         $post->delete();
 
         Session::flash('deleted_post','The Post has been deleted');
@@ -140,10 +143,10 @@ class AdminPostsController extends Controller
     }
 
 
-    public function post($id){
+    public function post($slug){
 
-        $post = Post::findOrFail($id);
-
-        return view('post',compact('post'));
+        $post = Post::whereSlug($slug)->firstOrFail();
+        $comments = $post->comments()->whereIsActive(1)->get();
+        return view('post',compact('post','comments'));
     }
 }

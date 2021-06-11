@@ -42,5 +42,5 @@
     {!! Form::submit("Create Post", ['class'=>'btn btn-primary']) !!}
 
     {!! Form::close() !!}
-
+    @include('includes.tinyeditor')
 @stop

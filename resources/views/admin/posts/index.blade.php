@@ -56,18 +56,21 @@
         <td>{{$post->category->name}}</td> 
         <td>{{$post->created_at->diffForHumans()}}</td> 
         <td>{{$post->updated_at->diffForHumans()}}</td> 
-        <td> <td><a href="{{route('home.post',$post->id)}}">View Post</a></td>  </td>
+        <td> <td><a href="{{route('home.post',$post->slug)}}">View Post</a></td>  
         </tr> 
          
      @endforeach
          
      @endif
     
-    
-    
-    
     </table>
     
+
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-5">
+        {{ $posts->render()   }}
+      </div>
+    </div>
     
 
 @stop

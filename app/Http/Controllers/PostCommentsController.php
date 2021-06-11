@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
+use App\Models\CommentReply;
 
 class PostCommentsController extends Controller
 {
@@ -17,6 +18,7 @@ class PostCommentsController extends Controller
     {
         //
         $comments = Comment::all();
+        
         return view('admin.comments.index',compact('comments'));
     }
 
@@ -44,7 +46,7 @@ class PostCommentsController extends Controller
             'post_id' => $request->post_id,
             'author'  => $user->name,
             'email'   => $user->email,
-            'photo'   =>$user->posts()->whereId($request->post_id)->first()->photo->file,
+            'photo'   =>$user->photo->file,
             'body'    =>$request->body
         ];
         Comment::create($data);
