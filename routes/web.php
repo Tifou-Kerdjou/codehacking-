@@ -47,3 +47,5 @@ Route::resource('admin/comments',App\Http\Controllers\PostCommentsController::cl
 Route::resource('admin/comments/replies',App\Http\Controllers\CommentRepliesController::class);
 });
 
+Route::post('/delete/media',[App\Http\Controllers\AdminMediaController::class,'deleteMedia']);
+
