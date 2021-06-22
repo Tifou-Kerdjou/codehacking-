@@ -13,13 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'] );
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/Admin', [App\Http\Controllers\HomeController::class, 'indexAdmin'])->name('homeAdmin');
 
 
 
@@ -27,10 +26,10 @@ Route::get('/post/{slug}',[App\Http\Controllers\AdminPostsController::class,'pos
 
 Route::group(['middleware'=>'admin'],function(){
 
-    Route::get('/admin',function(){
 
-        return view('admin.index');
-    })->name('admin');
+
+
+    Route::get('/admin',[App\Http\Controllers\AdminController::class,'index'])->name('admin');
 
     
 Route::resource('admin/users',App\Http\Controllers\AdminUsersController::class);

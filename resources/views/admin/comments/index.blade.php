@@ -13,6 +13,7 @@
 <th>Author</th> 
 <th>Email</th>
 <th>comment</th>
+<th>post slug</th>
  </tr> 
 @foreach ($comments as $comment)
 <tr> 
@@ -20,6 +21,7 @@
      <td>{{$comment->author}}</td> 
     <td>{{$comment->email}}</td> 
     <td>{{$comment->body}}</td>
+    <td>{{$comment->post->slug}}</td>
     <td><a href="{{route('home.post',$comment->post->slug)}}">View Post</a></td>
     <td>
 

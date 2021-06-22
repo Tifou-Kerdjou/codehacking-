@@ -105,11 +105,11 @@ class AdminMediaController extends Controller
     public function deleteMedia(Request $request){
 
 
-        if(isset($request->delete_single)){
-            $this->destroy($request->photo);
-            Session::flash('deleted_photo','The Photo has been Deleted');
+        // if(isset($request->delete_single)){
+        //     $this->destroy($request->photo);
+        //     Session::flash('deleted_photo','The Photo has been Deleted');
         
-        }
+        // }
 
         if(isset($request->delete_all) && !empty($request->checkBoxArray)){
         $photos = Photo::findOrFail($request->checkBoxArray);

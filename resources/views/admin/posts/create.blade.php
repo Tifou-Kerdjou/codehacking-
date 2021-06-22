@@ -42,5 +42,10 @@
     {!! Form::submit("Create Post", ['class'=>'btn btn-primary']) !!}
 
     {!! Form::close() !!}
-    @include('includes.tinyeditor')
+@stop
+@section('footer')
+<script>
+    // Doing this in a loaded JS file is better, I put this here for simplicity
+    $('#body').trumbowyg();
+</script>
 @stop

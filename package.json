@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "metismenu": "^3.0.7"
+        "metismenu": "^3.0.7",
+        "trumbowyg": "^2.24.0"
     }
 }
