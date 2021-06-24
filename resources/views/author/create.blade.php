@@ -48,3 +48,11 @@
 </div>
 
  @stop
+ @section('scripts')
+
+ <script>
+    // Doing this in a loaded JS file is better, I put this here for simplicity
+    $('#body').trumbowyg();
+</script>
+
+@stop

@@ -14,6 +14,10 @@ class AdminController extends Controller
         $postCount = Post::count();
         $CommentCount = Comment::count();
         $CategoryCount = Category::count();
-        return view('admin/index',compact('postCount','CommentCount','CategoryCount'));
+        $commentaprroved= Comment::where('is_active',1)->count();
+        $repliesaprroved= Comment::where('is_active',1)->count();
+        $repliesunaprroved= Comment::where('is_active',0)->count();
+        $commentunaprroved= Comment::where('is_active',0)->count();
+        return view('admin/index',compact('postCount','CommentCount','CategoryCount','commentaprroved','commentunaprroved','repliesaprroved','repliesunaprroved'));
     }
 }
