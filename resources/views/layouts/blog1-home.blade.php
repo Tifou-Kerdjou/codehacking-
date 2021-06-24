@@ -32,9 +32,9 @@
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; tifou 2021</p>
+            <div class="row " >
+                <div class="col-lg-12 ">
+                    <p class="">Copyright &copy; tifou 2021</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -44,6 +44,7 @@
     </div>
     <!-- /.container -->
     <script src="{{asset('js/libs.js')}}"></script>
+    @yield('scripts')
 
 </body>
 

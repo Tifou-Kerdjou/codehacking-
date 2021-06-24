@@ -41,10 +41,18 @@ Route::resource('admin/categories',App\Http\Controllers\AdminCategoriesControlle
 Route::resource('admin/media',App\Http\Controllers\AdminMediaController::class);
 
 
+});
+
 Route::resource('admin/comments',App\Http\Controllers\PostCommentsController::class);
 
 Route::resource('admin/comments/replies',App\Http\Controllers\CommentRepliesController::class);
-});
 
 Route::post('/delete/media',[App\Http\Controllers\AdminMediaController::class,'deleteMedia']);
 
+Route::group(['middleware'=>'auth'],function(){
+
+
+    Route::resource('author',App\Http\Controllers\AuthorController::class);
+
+
+});

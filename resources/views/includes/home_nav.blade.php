@@ -47,6 +47,12 @@
                </li>
                    
                @endif
+               @if ((Auth::user()->isAuthor()))
+               <li>
+                   <a href=" {{route('author.index')}} ">My Posts</a>
+               </li>
+                   
+               @endif
                <li   >
                 <a  href="#" >
                     {{ Auth::user()->name }} 

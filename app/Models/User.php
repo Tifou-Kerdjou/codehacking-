@@ -61,5 +61,13 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Post');
     }
+
+    public function isAuthor(){
+        if( $this->role->name == "author" ){
+
+            return true ;
+        }
+        return false;
+    }
     
 }
