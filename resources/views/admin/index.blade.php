@@ -70,10 +70,10 @@
         label: "TeamA Score",
         data: [ {{$commentaprroved}} , {{$commentunaprroved}} , {{$repliesaprroved}} ,  {{$repliesunaprroved}} ],
         backgroundColor: [
-          "#DEB887",
-          "#A9A9A9",
-          "#DC143C",
-          "#F4A460"
+          "#131eb2",
+          "#3dd207",
+          "#e80808",
+          "#e80883"
         ],
         borderColor: [
           "#CDA776",

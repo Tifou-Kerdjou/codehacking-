@@ -49,7 +49,7 @@ Route::resource('admin/comments/replies',App\Http\Controllers\CommentRepliesCont
 
 Route::post('/delete/media',[App\Http\Controllers\AdminMediaController::class,'deleteMedia']);
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'author'],function(){
 
 
     Route::resource('author',App\Http\Controllers\AuthorController::class);
